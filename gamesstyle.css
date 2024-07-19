@@ -165,8 +165,8 @@ a{
 
 .category-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    margin: 40px 0; /* Vertical spacing */
+    justify-content: center;
+    margin: 40px 0;
 }
 
 .category-title {
