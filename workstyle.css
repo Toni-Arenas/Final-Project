@@ -1,13 +1,13 @@
-*{
+* {
     margin: 0;
     font-family: Poppins;
 }
 
-body{
+body {
     background-color: rgb(37, 37, 37);
 }
 
-.container{
+.container {
     width: 100%;
     margin: auto;
 }
@@ -22,7 +22,7 @@ body{
     padding: 20px;
 }
 
-.logo-nav-div{
+.logo-nav-div {
     width: 100%;
     min-height: 10px;
     background-color: rgb(37, 37, 37);
@@ -36,9 +36,13 @@ body{
 .logo-div {
     width: 50%;
     min-height: 50px;
-    display: table-cell;
-    vertical-align: middle;
     padding-left: 3%;
+  }
+
+.logo-img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
 }
 
 .nav-div {
@@ -70,7 +74,7 @@ body{
     height: auto;
 }
 
-a{
+a {
     color: #EBEBEB;
     text-decoration: none;
 }
@@ -287,4 +291,104 @@ h1 {
 .collapse-text p {
     margin: 0;
     color: #222;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #EBEBEB;
+    margin: 3px 0;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 80%;
+    max-width: 300px;
+    background-color: rgb(37, 37, 37);
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+.mobile-nav.active {
+    display: block;
+    transform: translateX(0);
+}
+
+.mobile-nav a {
+    display: block;
+    padding: 8px 12px;
+    color: #EBEBEB;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.mobile-nav a:hover {
+    color: #ffec42;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: 1000;
+}
+
+  .overlay.active {
+    display: block;
+    opacity: 1;
+  }
+
+@media (max-width: 768px) {
+    .nav-div {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .body-div {
+      width: 90%;
+      padding: 10px;
+    }
+
+    .pillars {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pillar-card {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    .intro h1 {
+      font-size: 4rem;
+    }
 }
