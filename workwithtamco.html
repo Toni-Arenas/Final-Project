@@ -11,18 +11,31 @@
         <div class="container">
             <div class="logo-nav-div">
                 <div class="logo-div">
-                    <img src="tamco-games-1.png" width="200">
+                    <img src="tamco-games-1.png" class="logo-img" alt="TAMCO Logo">
                 </div>
                 <div class="nav-div">
                     <table border="0" cellpadding="30">
-                        <td><b><a href=index.html>Home</a></b></td>
-                        <td><b><a href=abouttamco.html>About TAMCO</a></b></td>
-                        <td><b><a href=workwithtamco.html>Work with Us</a></b></td>
-                        <td><b><a href=lifewithtamco.html>Life at TAMCO</a></b></td>
-                        <td><b><a href=gamestamco.html>Games</a></b></td>
-                        <td><b><a href=regtamco.html>Log In</a></b></td>
+                        <td><b><a href="index.html">Home</a></b></td>
+                        <td><b><a href="abouttamco.html">About TAMCO</a></b></td>
+                        <td><b><a href="workwithtamco.html">Work with Us</a></b></td>
+                        <td><b><a href="lifewithtamco.html">Life at TAMCO</a></b></td>
+                        <td><b><a href="gamestamco.html">Games</a></b></td>
+                        <td><b><a href="regtamco.html">Log In</a></b></td>
                     </table>
                 </div>
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="mobile-nav" id="mobile-nav">
+                <a href="index.html">Home</a>
+                <a href="abouttamco.html">About TAMCO</a>
+                <a href="workwithtamco.html">Work with Us</a>
+                <a href="lifewithtamco.html">Life at TAMCO</a>
+                <a href="gamestamco.html">Games</a>
+                <a href="regtamco.html">Log In</a>
             </div>
             <div class="header-div">
                 <img src="header-tamco.png" class="img-responsive">
@@ -126,4 +139,21 @@
             <a href="mailto:arenas.marietoni@gmail.com">arenas.marietoni@gmail.com</a>
         </div>
     </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const overlay = document.querySelector('.overlay');
+
+        hamburgerMenu.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        overlay.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        });
+    </script>
 </html>
